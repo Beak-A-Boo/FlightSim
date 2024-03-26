@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d28tqbfu5ahtm"]
+
+[ext_resource type="Material" uid="uid://dxnp7javhkqfo" path="res://Assets/Shaders/TilingFloor/TilingFloor.tres" id="1_rxt08"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7de2y"]
+
+[node name="Camera3D" type="Camera3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.79236)
+material_override = ExtResource("1_rxt08")
+double_sided = false
+no_depth_test = true
+fixed_size = true
+texture = SubResource("NoiseTexture2D_7de2y")

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dxnp7javhkqfo"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/TilingFloor/TilingFloor.gdshader" id="1_1171r"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1171r")
+shader_parameter/gridColor = Color(0.470588, 0.380392, 0.65098, 1)
+shader_parameter/checkerColor = null
+shader_parameter/fadeStart = 80.0
+shader_parameter/fadeEnd = 100.0
+shader_parameter/unitSize = 1.0
+shader_parameter/subdivisions = 5
+shader_parameter/majorLineThickness = 2.0
+shader_parameter/minorLineThickness = 1.0
+shader_parameter/minorLineAlpha = 0.3
+shader_parameter/centerOffset = Vector3(0, 0, 0)

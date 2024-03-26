@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws

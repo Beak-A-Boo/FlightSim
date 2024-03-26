@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: [windows, linux]
+        arch: [x64, aarch64]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        id: build
+        uses: yeslayla/build-godot-action@f362e14dc5d8290ac81ee3ed7c799242dd3215af # v1.5
+        with:
+            name: '${{ github.event.repository.name }}'
+            preset: '${{ matrix.platform }}_${{ matrix.arch }}'
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: '${{ github.event.repository.name }}_client_${{ matrix.platform }}-${{ matrix.arch }}'
+          path: ${{ steps.build.outputs.build }}
