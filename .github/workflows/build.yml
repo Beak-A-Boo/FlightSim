@@ -9,16 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: [windows, linux]
-        arch: [x64, aarch64]
+        platform:
+          - name: windows
+            ext: '.exe'
+          - name: linux
+            ext: ''
+        arch:
+          - x64
+          - aarch64
     steps:
       - uses: actions/checkout@v4
       - name: Build
         id: build
         uses: yeslayla/build-godot-action@f362e14dc5d8290ac81ee3ed7c799242dd3215af # v1.5
         with:
-            name: '${{ github.event.repository.name }}'
-            preset: '${{ matrix.platform }}_${{ matrix.arch }}'
+            name: '${{ github.event.repository.name }}${{ matrix.platform.ext }}'
+            preset: '${{ matrix.platform.name }}_${{ matrix.arch }}'
+            package: true
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
