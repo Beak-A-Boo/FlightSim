@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         id: build
-        uses: yeslayla/build-godot-action@f362e14dc5d8290ac81ee3ed7c799242dd3215af # v1.5
+        uses: yeslayla/build-godot-action@f759ed7f8fcb5137cb70873ecf663aa8a1bd998b
         with:
             name: '${{ github.event.repository.name }}${{ matrix.platform.ext }}'
             preset: '${{ matrix.platform.name }}_${{ matrix.arch }}'
