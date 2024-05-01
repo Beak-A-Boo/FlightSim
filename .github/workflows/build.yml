@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: '${{ github.event.repository.name }}_client_${{ matrix.platform }}-${{ matrix.arch }}'
-          path: ${{ steps.build.outputs.build }}
+          path: '${{ steps.build.outputs.build }}'
