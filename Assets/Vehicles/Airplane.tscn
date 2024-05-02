@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4prjysk53iim"]
+[gd_scene load_steps=15 format=3 uid="uid://c4prjysk53iim"]
 
 [ext_resource type="Texture2D" path="res://Assets/Vehicles/Airplane/Textures/diffuse.dds" id="1_rb8pw"]
 [ext_resource type="Script" path="res://Scripts/Flight/FlightControlComputer.cs" id="1_sg2ib"]
+[ext_resource type="Script" path="res://Scripts/Flight/AerodynamicBody.cs" id="3_2c0u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd2vh"]
 resource_name = "airplane"
@@ -120,3 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.71)
 
 [node name="Propeller" type="Node3D" parent="ForcePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 2.25)
+
+[node name="LiftGenerator" type="Node" parent="." node_paths=PackedStringArray("Body")]
+script = ExtResource("3_2c0u5")
+Body = NodePath("..")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu8ex16s81rv1"]
+[gd_scene load_steps=7 format=3 uid="uid://bu8ex16s81rv1"]
 
 [ext_resource type="Script" path="res://Scripts/Flight/PlayerFlightInputs.cs" id="1_un0h8"]
 [ext_resource type="PackedScene" uid="uid://c4prjysk53iim" path="res://Assets/Vehicles/Airplane.tscn" id="2_pemc6"]
 [ext_resource type="PackedScene" uid="uid://d28tqbfu5ahtm" path="res://Assets/Player/CameraRig/CameraRig.tscn" id="3_lmskc"]
 [ext_resource type="Script" path="res://Scripts/PlayerController/PlayerInputs.cs" id="4_ycsb2"]
+[ext_resource type="PackedScene" uid="uid://cg0bmx27xc2yi" path="res://Assets/Player/HUD/HUD.tscn" id="5_3k5il"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8gibf"]
 
@@ -36,3 +37,7 @@ PlayerAnchor = NodePath("..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 0, 0)
+
+[node name="Hud" parent="." node_paths=PackedStringArray("FlightControlComputer") instance=ExtResource("5_3k5il")]
+position = Vector2(126, 98)
+FlightControlComputer = NodePath("../PlayerRig/Airplane")

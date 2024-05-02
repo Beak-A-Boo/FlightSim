@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg0bmx27xc2yi"]
+
+[ext_resource type="Script" path="res://Scripts/HUD/HUDController.cs" id="1_symbk"]
+
+[node name="Hud" type="Node2D" node_paths=PackedStringArray("PositionLabel", "VelocityLabel")]
+script = ExtResource("1_symbk")
+PositionLabel = NodePath("PositionLabel")
+VelocityLabel = NodePath("VelocityLabel")
+
+[node name="PositionLabel" type="Label" parent="."]
+offset_top = 373.0
+offset_right = 232.0
+offset_bottom = 402.0
+text = "Position: x,y,z
+"
+vertical_alignment = 1
+
+[node name="VelocityLabel" type="Label" parent="."]
+offset_top = 402.0
+offset_right = 232.0
+offset_bottom = 431.0
+text = "Velocity: x,y,z
+"
+vertical_alignment = 1
+
+[node name="LiftLabel" type="Label" parent="."]
+offset_top = 431.0
+offset_right = 232.0
+offset_bottom = 460.0
+text = "Lift: x,y,z
+"
+vertical_alignment = 1
